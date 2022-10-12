@@ -18,8 +18,5 @@ class Explorador: public Personaje{
         void recoje(){
         }
 
-        // funcion para que cambie tuneles
-        void cambiaTunel(){
-        }
 
 };

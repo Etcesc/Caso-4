@@ -11,7 +11,6 @@ public:
     ~Topo();
 
     // funcion para que camine
-    // aqui hay una basica para herencia
     void camina(){
     }
 

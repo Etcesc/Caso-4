@@ -1,3 +1,5 @@
+// OJO, ESTE PARECE QUE SOBREESCRIBE EL NODE DENTRO DEL FOLDER arbol avl
+
 #include <iostream>
 
 #ifndef NODE 
