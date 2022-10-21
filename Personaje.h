@@ -60,8 +60,8 @@ Personaje(){
     // ------------------------------- FUNCIONES DE JUEGO
     void movimiento(double pTiempo){
         return;
-    } // INCOMPLETO
-    
+    } // INCOMPLETO. falta implementacion dentro de arbol
+
 };
 
 
