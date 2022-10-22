@@ -11,14 +11,21 @@ protected:
     int velocidad;
     int cantMaximaUnidades;
     bool puedeCambiarTuneles;
+
+    int state; // 1 - entra a mina
     
 public:
-Personaje(){
-    puedeCambiarTuneles = false;
+Personaje(){ //(string pNombre, int pVelocidad, int pCantMaxUnits){
+    // this->nombre = pNombre;
+    // this->velocidad = pVelocidad;
+    // this->cantMaximaUnidades = pCantMaxUnits;
+
+    puedeCambiarTuneles = false; // siempre se inicia en false a menos que otro personaje lo requiera True.
+                                 // En ese caso, ejecuta un metodo set de este atributo y convierte a True.
 }
     
     string getNombre(){
-        return nombre;
+        return this->nombre;
     }
 
 
@@ -28,7 +35,7 @@ Personaje(){
 
 
     int getVelocidad(){
-        return velocidad;
+        return this->velocidad;
     }
 
 
@@ -48,7 +55,7 @@ Personaje(){
     
 
     bool getPuedeCambiar(){
-        return puedeCambiarTuneles;
+        return this->puedeCambiarTuneles;
     }
 
 
@@ -56,9 +63,17 @@ Personaje(){
         this->puedeCambiarTuneles = pPuede;
     }
 
+    int getState(){
+        return this->state;
+    }
+
+    void setState(int pState){
+        this->state = pState;
+    }
+
 
     // ------------------------------- FUNCIONES DE JUEGO
-    void movimiento(double pTiempo){
+    void minar(double pTiempo, int pState){
         return;
     } // INCOMPLETO. falta implementacion dentro de arbol
 
