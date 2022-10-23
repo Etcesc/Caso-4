@@ -1,13 +1,30 @@
 # include <iostream>
+#include <stdlib.h>
+#include <windows.h>
+
 # include "Personaje.h"
-//# include "Camara.h" // TODO ARREGLAR CLASE CAMARA
+# include "Camara.h" // TODO ARREGLAR CLASE CAMARA
 # include "Tunel.h"
 # include "Puerta.h"
-# include "Temporizador.h"
-
-//# include "Arbol.h"
 
 using namespace std;
+
+boolean temporizador(int s)
+{
+    while (true)
+    {
+        if (s == 0)
+        {   
+            //cout << "hola" << endl;
+            break;
+            return false; // retorna false para terminar algun thread
+            // puede hacerse un return importante para determinar el fin del juego
+        }
+        cout<<s--; // imprime los segundos restados
+        Sleep(1000);
+    }
+    return true;
+}
 
 // Crea el personaje Explorador
 class Explorador : public Personaje
@@ -52,8 +69,7 @@ int main(){
     Carguero nuevoCarguero;
     Topo nuevoTopo;
 
-    //Camara nCamara;
-    // Puerta nPuerta;
+    temporizador(1); // segundos
 
     
     int option;
@@ -70,6 +86,7 @@ int main(){
 
                     cout<<"\nTurno del jugador "<<jugador<<endl;
                     cout<<"Comienza temporizador [2 minutos]\n";
+                    temporizador(120);
 
                     int rolA, rolB, rolC;
                     int pj=1;
