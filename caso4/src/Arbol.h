@@ -1,4 +1,5 @@
 #include "Node.h"
+#include "Camara.h"
 #include <typeinfo>
 #include <iostream>
 
@@ -14,10 +15,13 @@ private:
     
     Node<T> *left;
     Node<T> *right;
+    Node<T> *root;
     int alturaArbol;
     int element;
 
-    int distanciaEnHojas;
+    int distanciaTotalDeArbol;
+    int size;
+
 
 
 public:
@@ -32,64 +36,71 @@ public:
     }
 
     //Arreglar variable element, creo que no deberia ser integer
-    Node *Insertar(Node *T, T *pData)
+    Node<T> *Insertar(T Tree, T *pData)
     {
-        Node<T> *newNode = new Node<T>(pData);
+        /* dentro de un while:
+        cual es la distacia total de las hojas?
+        si es menor a 720, entonces construye otro nodo */
+        
+        while (distanciaTotalDeArbol < 720){
+            Node<T> *newNode = new Node<T>(pData);
 
-        if(T == NULL){
-
-            T = (Node*)malloc(sizeof(Node));
-            T -> element = pData;
-            T -> left = NULL;
-            T -> right = NULL;
-            // while (this->distanciaEnHojas<720):
-            //     distanciaEnHojas += random()
-            //     break
-        }
-        else
-
-            if(pData > T->element)        
-            {
-
-                T -> right = Insertar(T -> right,pData);
-                if(balanceFactor(T) == -2)
-                    if( pData > T -> right -> element)
-                        T = RR(T);
-                    else
-                        T = RL(T);
-
+            if(this->size == NULL){
+                root = (Node*)malloc(sizeof(Node));
+                root = newNode;
+                newNode->data = pData;
+                Tree -> left = NULL;
+                Tree -> right = NULL;
+                // while (this->distanciaEnHojas<720):
+                //     distanciaEnHojas += random()
+                //     break
             }
             else
-                if(pData<T->element)
+
+                if(pData > Tree->element)        
                 {
-                    T -> left = Insertar(T -> left,pData);
-                    if(balanceFactor(T)==2)
-                        if(pData < T-> left -> element)
-                            T=LL(T);
+
+                    Tree -> right = Insertar(Tree -> right,pData);
+                    if(balanceFactor(Tree) == -2)
+                        if( pData > Tree -> right -> element)
+                            Tree = RR(T);
                         else
-                            T=LR(T);
+                            Tree = RL(T);
 
                 }
+                else
+                    if(pData<Tree->element)
+                    {
+                        Tree -> left = Insertar(T -> left,pData);
+                        if(balanceFactor(Tree)==2)
+                            if(pData < Tree-> left -> element)
+                                Tree=LL(Tree);
+                            else
+                                Tree=LR(Tree);
 
-            T -> alturaArbol = height(T);
+                    }
 
-            return(T);
+                Tree -> alturaArbol = height(Tree);
+
+                return(Tree);
+        }break;
+        return 0;
     }
 
-    Node * Delete(Node *T,T *pData)
+    Node<T> * Delete(Node<T> *Tree, Node<T> *pData)
     {
         Node*p;
 
-        if(T == NULL)
+        if(Tree == NULL)
         {
             return NULL;
         }
         else
-            if(pData > T->element)    
+            if(pData > Tree->element)    
             {
-                T -> right = Delete(T -> right,pData);
-                if(balanceFactor(T) == 2)
-                    if(balanceFactor(T -> left) >= 0)
+                Tree -> right = Delete(Tree -> right,pData);
+                if(balanceFactor(Tree) == 2)
+                    if(balanceFactor(Tree -> left) >= 0)
                         T = LL(T);
                     else
                         T = LR(T);
@@ -129,7 +140,7 @@ public:
         return(T);
     }
 
-    int height(Node *T)
+    int height(Node<T> *T)
     {
 
         int lh,rh;//left height, right height
@@ -151,7 +162,7 @@ public:
         return(rh);
     }
 
-    Node * rotateright(Node *pData)
+    Node<T> * rotateright(Node<T> *pData)
     {
         Node *changed;
         changed = pData -> left;
@@ -162,7 +173,7 @@ public:
         return(changed);
     }
 
-    Node * rotateleft(Node *pData)
+    Node<T> * rotateleft(Node<T> *pData)
     {
         Node *changed;
         changed = pData -> right;
@@ -248,10 +259,10 @@ public:
     void setSize(){
         //this->size = LO QUE DEVUELVA EL PROGRAMA EN arbol avl/test.cpp
     }
-
+    */
     Node<T>* getRaiz(){
-        return raiz;
-    }*/
+        return root;
+    }
 
 
 
