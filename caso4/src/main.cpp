@@ -5,6 +5,8 @@
 # include "Puerta.h"
 # include "Temporizador.h"
 
+//# include "Arbol.h"
+
 using namespace std;
 
 // Crea el personaje Explorador
@@ -50,6 +52,10 @@ int main(){
     Carguero nuevoCarguero;
     Topo nuevoTopo;
 
+    //Camara nCamara;
+    // Puerta nPuerta;
+
+    
     int option;
     do {
         cout<<"\n\n";
