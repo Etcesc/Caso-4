@@ -1,13 +1,13 @@
 # include <iostream>
-#include <stdlib.h>
-#include <windows.h>
-#include <string>
+# include <stdlib.h>
+# include <windows.h>
+# include <string>
 
 # include "Personaje.h"
 # include "Camara.h" // TODO ARREGLAR CLASE CAMARA
 # include "Tunel.h"
 # include "Puerta.h"
-# include "Arbol.h"
+//# include "Arbol.h"
 
 using namespace std;
 
@@ -76,8 +76,8 @@ int main(){
     nCamara.setUnidadesMineral();
     cout << "Unidades de minado: " + to_string(nCamara.getUnidadesMineral()) << endl;
 
-    Arbol<string> nArbol;
-    Node<string> *nRaiz = nArbol.getRaiz();
+    //Arbol<string> nArbol;
+    //Node<string> *nRaiz = nArbol.getRaiz();
     // nArbol.Insertar(nRaiz, nCamara);
 
    // temporizador(1); // segundos (prueba)
@@ -97,7 +97,7 @@ int main(){
 
                     cout<<"\nTurno del jugador "<<jugador<<endl;
                     cout<<"Comienza temporizador [2 minutos]\n";
-                    temporizador(120);
+                    //temporizador(120); 
 
                     int rolA, rolB, rolC;
                     int pj=1;

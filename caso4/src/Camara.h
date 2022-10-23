@@ -7,8 +7,7 @@
 using namespace std;
 
 template <class T>
-class Camara : public Node
-{
+class Camara{
 private:
     int potencialMinado;
     int unidadesMineral;
