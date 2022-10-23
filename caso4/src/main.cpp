@@ -1,6 +1,6 @@
 # include <iostream>
 # include "Personaje.h"
-# include "Camara.h"
+//# include "Camara.h" // TODO ARREGLAR CLASE CAMARA
 # include "Tunel.h"
 # include "Puerta.h"
 # include "Temporizador.h"
@@ -52,15 +52,59 @@ int main(){
 
     int option;
     do {
-        cout << "1. Comenzar juego\n";
+        cout<<"\n\n";
+        cout << "1. Comenzar partida\n";
         cout << "2. Terminar programa\n";
-        cout << "Seleccione una opción: ";
+        cout << "Seleccione una opcion: ";
         cin >> option;
         switch(option)
         {
-            case 1: break;
+            case 1: 
+                for(int jugador=1; jugador<=2; jugador++){
 
-            default: cout<< "Digite el numero correspondiente a la accion deseada"<<endl;
+                    cout<<"\nTurno del jugador "<<jugador<<endl;
+                    cout<<"Comienza temporizador [2 minutos]\n";
+
+                    int rolA, rolB, rolC;
+                    int pj=1;
+
+                    while(pj<=3){
+                        cout<<"\nSeleccione su personaje numero "<<pj<<endl;
+                        cout<<"1. Explorador\n";
+                        cout<<"2. Carguero\n";
+                        cout<<"3. Topo\n";
+                        if(pj==1){
+                            cin>>rolA;
+                            cout<<"Ha seleccionado la clase numero "<<rolA<<endl;
+                            pj++;
+                        }
+                        else if(pj==2){
+                            cin>>rolB;
+                            cout<<"Ha seleccionado la clase numero"<<rolB<<endl;
+                            pj++;
+                        }
+                        else if(pj==3){
+                            cin>>rolC;
+                            cout<<"Ha seleccionado la clase numero "<<rolC<<endl;
+                            pj++;
+                        }
+                        else
+                            cout<<"Seleccione una opción válida"<<endl;
+                    }
+                    // SE ENVIAN LAS VARIABLES ROL PARA DETERMINAR LOS PERSONAJES ESCOGIDOS
+                
+                    cout<<"\nElija su estrategia a utilizar\n";
+                    // MENU CON SELECCION DE ESTRATEGIAS
+
+                    // EJECUTA EL THREAD/RECORRIDO DEL ARBOL HASTA QUE SE ACABA EL TIEMPO
+
+                    cout<<"\n\n\n";
+
+                }
+
+
+            
+            break;
             }
     }while(option!=2);
 
