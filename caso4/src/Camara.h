@@ -2,27 +2,24 @@
 #include <cstdlib>
 #include "Node.h"
 
-#ifndef CAMARA
-
-#define CAMARA 1
+#ifndef Camara
 
 using namespace std;
 
-
-
-
 template <class T>
-class Camara
+class Camara : public Node
 {
 private:
     int potencialMinado;
     int unidadesMineral;
     int profundidadDeCamara;
 
+    int profundidadSuperior; // valor de profundidad de arriba
+
 
 public:
 Camara(){
-    unidadesMineral = setUnidadesMineral();
+    //unidadesMineral = setUnidadesMineral();
     // falta profundidad
     // falta potencial de minado
 };
