@@ -17,6 +17,8 @@ private:
     int alturaArbol;
     int element;
 
+    int distanciaEnHojas;
+
 
 public:
     Arbol(){
@@ -40,6 +42,9 @@ public:
             T -> element = pData;
             T -> left = NULL;
             T -> right = NULL;
+            // while (this->distanciaEnHojas<720):
+            //     distanciaEnHojas += random()
+            //     break
         }
         else
 

@@ -2,7 +2,14 @@
 #include <cstdlib>
 #include "Node.h"
 
+#ifndef CAMARA
+
+#define CAMARA 1
+
 using namespace std;
+
+
+
 
 template <class T>
 class Camara
@@ -14,6 +21,12 @@ private:
 
 
 public:
+Camara(){
+    unidadesMineral = setUnidadesMineral();
+    // falta profundidad
+    // falta potencial de minado
+};
+
     int getPotencialMinado(){
         return this->potencialMinado;
     }
@@ -34,7 +47,7 @@ public:
         srand(time(0));  // inicia semilla generadora de numero
         for(int i=0;i<10;i++) // hace 10 calculos para obtener un random
             randomUnidades = (rand() % 20); 
-        this->unidadesMineral = randomUnidades+1 // +1 para asegurarse que nunca va a ser 0
+        this->unidadesMineral = randomUnidades+1; // +1 para asegurarse que nunca va a ser 0
     }
 
 
@@ -47,3 +60,4 @@ public:
     }
 };
 
+#endif
