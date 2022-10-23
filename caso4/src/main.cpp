@@ -1,5 +1,9 @@
 # include <iostream>
 # include "Personaje.h"
+# include "Camara.h"
+# include "Tunel.h"
+# include "Puerta.h"
+# include "Temporizador.h"
 
 using namespace std;
 
@@ -40,6 +44,28 @@ public:
 
 
 int main(){
+
+//    Node *root=NULL;
+    Explorador nuevoExplorador;
+    Carguero nuevoCarguero;
+    Topo nuevoTopo;
+
+    int option;
+    do {
+        cout << "1. Comenzar juego\n";
+        cout << "2. Terminar programa\n";
+        cout << "Seleccione una opción: ";
+        cin >> option;
+        switch(option)
+        {
+            case 1: break;
+
+            default: cout<< "Digite el numero correspondiente a la accion deseada"<<endl;
+            }
+    }while(option!=2);
+
+    return 0;
+        
 
     // Crea personajes de juego
     // Explorador nuevoExplorador;
