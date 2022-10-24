@@ -4,9 +4,9 @@
 using namespace std;
 
 
-#ifndef AGRESIVO
+#ifndef NORMAL
 
-#define AGRESIVO 1
+#define NORMAL 1
 
 class Normal: public Strategy{
     public:
@@ -35,7 +35,7 @@ class Normal: public Strategy{
         {
             for (int i = 0; i < pPuertas.getSize(); i++)
             {
-                if(pPuertas.find(i)->getTunel()){ // Como es agresivo entra en la primer puerta que encuentre 
+                if(pPuertas.find(i)->getTunel()){ 
                     return pPuertas.find(i);
                 }    
             }

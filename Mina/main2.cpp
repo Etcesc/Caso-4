@@ -103,6 +103,8 @@ int main(){
                             cout<<"Seleccione una opción válida"<<endl;
                     }
 
+                    cout<< "Corriendo programa..."<<endl;
+
                     // EJECUTA EL THREAD/RECORRIDO DEL ARBOL HASTA QUE SE ACABA EL TIEMPO
                     /*
                     Node *nodo = NULL;

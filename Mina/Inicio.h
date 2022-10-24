@@ -17,7 +17,7 @@ class Inicio {
         
 
     public:
-        MainRoom(int pNumeroDePuertas){
+        Inicio(int pNumeroDePuertas){
             this->numeroDePuertas = pNumeroDePuertas;
             puerta = new Puerta();
             this->puerta->setNombre("PuertaInicial");
