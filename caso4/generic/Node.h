@@ -9,8 +9,12 @@ using namespace std;
 template <class T>
 class Node {
     private:
-        T *data;
-        Node *next;
+        // T *data;
+        // Node *next;
+        int key;
+        Node *left;
+        Node *right;
+        int height;
     
     public:
         Node() {

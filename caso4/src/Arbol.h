@@ -43,7 +43,7 @@ public:
         si es menor a 720, entonces construye otro nodo */
         
         while (distanciaTotalDeArbol < 720){
-            Node<T> *newNode = new Node<T>(pData);
+            Node<T> *newNode = new Node(pData);
 
             if(this->size == NULL){
                 root = (Node*)malloc(sizeof(Node));
@@ -184,13 +184,13 @@ public:
         return(changed);
     }
 
-    Node * RR(Node *T)
+    Node<T> * RR(Node<T> *T)
     {
         T = rotateleft(T);
         return(T);
     }
 
-    Node * LL(Node *T)
+    Node<T> * LL(Node<T> *T)
     {
         T = rotateright(T);
         return(T);
@@ -204,14 +204,14 @@ public:
         return(T);
     }
 
-    Node * RL(Node *T)
+    Node<T> * RL(Node<T> *T)
     {
         T -> right = rotateright(T->right);
         T = rotateleft(T);
         return(T);
     }
 
-    int balanceFactor(Node *T)
+    int balanceFactor(Node<T> *T)
     {
         int lh,rh;
         if( T == NULL)

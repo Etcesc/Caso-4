@@ -1,7 +1,6 @@
 #include <string>
 #include "List.h"
 
-
 using namespace std;
 
 class Personaje
@@ -15,14 +14,14 @@ protected:
     int state; // 1 - entra a mina
     
 public:
-Personaje(){ //(string pNombre, int pVelocidad, int pCantMaxUnits){
+    Personaje(){ //(string pNombre, int pVelocidad, int pCantMaxUnits){
     // this->nombre = pNombre;
     // this->velocidad = pVelocidad;
     // this->cantMaximaUnidades = pCantMaxUnits;
 
     puedeCambiarTuneles = false; // siempre se inicia en false a menos que otro personaje lo requiera True.
                                  // En ese caso, ejecuta un metodo set de este atributo y convierte a True.
-}
+    }
     
     string getNombre(){
         return this->nombre;
