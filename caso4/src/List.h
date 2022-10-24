@@ -1,4 +1,4 @@
-#include "Node.h"
+#include "../AVL/Node.h"
 #include <typeinfo>
 #include <iostream>
 
@@ -97,7 +97,7 @@ class List {
             }
         }
 
-        bool remove(int pPosition) {
+        boolean remove(int pPosition) {
             bool result = false;
             if (first!=NULL && pPosition<getSize()) {
                 Node<T> *search = first;

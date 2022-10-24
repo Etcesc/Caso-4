@@ -3,84 +3,23 @@
 # include <windows.h>
 # include <string>
 
-# include "Personaje.h"
-# include "Camara.h" // TODO ARREGLAR CLASE CAMARA
-# include "Tunel.h"
-# include "Puerta.h"
-//# include "Arbol.h"
+//# include "../Personajes/Strats/Normal.h"
+//# include "../Personajes/Strats/Riesgoso.h"
+//# include "../Personajes/Strats/Seguro.h"
 
 using namespace std;
 
-boolean temporizador(int s)
-{
-    while (true)
-    {
-        if (s == 0)
-        {   
-            //cout << "hola" << endl;
-            break;
-            return false; // retorna false para terminar algun thread
-            // puede hacerse un return importante para determinar el fin del juego
-        }
-        cout<<s--; // imprime los segundos restados
-        Sleep(1000);
-    }
-    return true;
-}
-
-// Crea el personaje Explorador
-class Explorador : public Personaje
-{
-public:
-    Explorador(){
-        nombre = "explorador";
-        velocidad = 20; // metros por segundo
-        cantMaximaUnidades = 8; // minerales maximos que puede cargar
-    }
-};
-
-// Crea el personaje Carguero
-class Carguero : public Personaje
-{
-public:
-    Carguero(){
-        nombre = "carguero";
-        velocidad = 10; // metros por segundo
-        cantMaximaUnidades = 40; // minerales maximos que puede cargar
-    }
-};
-
-// Crea el personaje Topo
-class Topo : public Personaje
-{
-public:
-    Topo(){
-        nombre = "topo";
-        velocidad = 7; // metros por segundo
-        cantMaximaUnidades = 15; // minerales maximos que puede cargar
-        puedeCambiarTuneles = true;
-    }
-};
-
-
-
 int main(){
 
-//    Node *root=NULL;
-    Explorador nuevoExplorador;
-    Carguero nuevoCarguero;
-    Topo nuevoTopo;
+    int alturaArbol=0;
+    int cantCam=0;
 
-
-    Camara<string> nCamara;
-    nCamara.setUnidadesMineral();
-    cout << "Unidades de minado: " + to_string(nCamara.getUnidadesMineral()) << endl;
-
-    //Arbol<string> nArbol;
+    //nArbol.insertar(nodo,);
     //Node<string> *nRaiz = nArbol.getRaiz();
     // nArbol.Insertar(nRaiz, nCamara);
 
    // temporizador(1); // segundos (prueba)
+
 
     
     int option;
@@ -93,6 +32,14 @@ int main(){
         switch(option)
         {
             case 1: 
+                cout<< "Digite la cantidad de camaras con la que van a jugar\n";
+                cout<< "[Debe ser un numero del 5 al 15\n";
+                cin >> cantCam;
+                if(cantCam<5 || cantCam>15){
+                    cout<<"numero de camaras fuera de rango, intente de nuevo\n";
+                    break;
+                }
+                else
                 for(int jugador=1; jugador<=2; jugador++){
 
                     cout<<"\nTurno del jugador "<<jugador<<endl;
@@ -126,14 +73,59 @@ int main(){
                             cout<<"Seleccione una opción válida"<<endl;
                     }
                     // SE ENVIAN LAS VARIABLES ROL PARA DETERMINAR LOS PERSONAJES ESCOGIDOS
-                
+                    int op = 1;
+                    int estrategiaA, estrategiaB, estrategiaC;
                     cout<<"\nElija su estrategia a utilizar\n";
                     // MENU CON SELECCION DE ESTRATEGIAS
+                    while(op<=1){
+                        cout<<"1. Seguro\n";
+                        cout<<"2. Riesgoso\n";
+                        cout<<"3. Normal\n";
+                        if(op==1){
+                            cin>>estrategiaA;
+                            cout<<"Ha seleccionado la estrategia "<<estrategiaA<<endl;
+                            //seguro()
+                            op++;
+                        }
+                        else if(op==2){
+                            cin>>estrategiaB;
+                            cout<<"Ha seleccionado la estrategia"<<estrategiaB<<endl;
+                            //riesgoso();
+                            op++;
+                        }
+                        else if(op==3){
+                            cin>>estrategiaC;
+                            cout<<"Ha seleccionado la estrategia "<<estrategiaC<<endl;
+                            //normal();
+                            op++;
+                        }
+                        else
+                            cout<<"Seleccione una opción válida"<<endl;
+                    }
 
                     // EJECUTA EL THREAD/RECORRIDO DEL ARBOL HASTA QUE SE ACABA EL TIEMPO
+                    /*
+                    Node *nodo = NULL;
+                    for(int i = 0; i < cantCam; i++) {
+                        //se va creando la cantidad generada por el random
+                        Camara *cam = new Camara();
+                        int potenciaMinado = cam->getPotencialMinado();  //dentro de esta tambien se generan minerales y distancia
+                        alturaArbol = alturaArbol + cam->getProfundidadCamara();
+                        
+                        if(alturaArbol >= 720) {
+                            cout << "Altura excedida" << endl;
+                            alturaArbol = alturaArbol - cam->getProfundidadCamara(); 
+                            break;
+                        }
 
+                        //nodo = nMina->insertar(nodo, new int(potenciaMinado));   //se agrega nodo a la mina con el potencial
+                        cout << "Agregando camara" << endl;
+                        //Camara *encontrado = nMina->search(nodo, new int(potenciaMinado));     //se busca para asignarle "contenido", que es la camara
+                        //cout << "Minerales: " << encontrado->getUnidadesMineral() << endl;
+                        cout << "Numero de camara: " << i << endl;
+                    }
                     cout<<"\n\n\n";
-
+*/
                 }
 
 

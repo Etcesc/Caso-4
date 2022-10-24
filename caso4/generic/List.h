@@ -1,5 +1,4 @@
-#include "Node.h"
-#include "../eventos/event.h"
+#include "../AVL/Node.h"
 
 #ifndef LIST 
 
